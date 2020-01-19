@@ -1,0 +1,10 @@
+body {
+  background-color:grey;
+}
+
+#dropContainer {
+  width: 300px;
+  height: 300px;
+  border-style: dotted;
+  background-color: goldenrod;
+ }

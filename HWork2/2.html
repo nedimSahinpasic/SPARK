@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const divOne = document.createElement("div");
+
+    document.body.appendChild(divOne);
+
+    const ulList = document.createElement("ul");
+    ulList.setAttribute("id", "list");
+    divOne.appendChild(ulList);
+
+    const lis = ["Item", "Item", "Item", "Item", "Item", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"]
+
+    for (let i = 0; i < lis.length; i++) {
+      let listItem = document.createElement("li");
+      listItem.innerHTML = lis[i];
+      ulList.appendChild(listItem);
+    }
+
+    const lista = document.getElementById("list");
+    console.log("Broj elemenata liste je " + lista.childElementCount);
+    console.log("Sirina je", lista.clientWidth);
+    console.log("Visina je", lista.clientHeight);
+
+    ulList.removeChild(ulList.lastElementChild);
+
+    var ul = document.getElementsByTagName("li");
+
+    for (let i = 0; i < ul.length; i++) {
+      for (let j = i + 1; j < ul.length; j++) {
+        if (ul[i].innerHTML === ul[j].innerHTML) {
+          ul[i].parentNode.removeChild(ul[i]);
+        }
+      }
+    }
+
+    //ovaj ugniježđeni for ne radi kako treba! pravo rješenje nemam!
+
+    var clone_1 = ulList.firstChild.cloneNode(true),
+      clone_2 = ulList.lastChild.cloneNode(true),
+      parent = ulList.firstChild.parentNode;
+
+    parent.replaceChild(clone_2, list.firstChild);
+    parent.replaceChild(clone_1, list.lastChild);
+
+    var google = document.createElement("a");
+    google.href = "https://google.ba";
+    google.target = '_blank';
+    google.innerHTML = "Google";
+
+    ul[ul.length - 2].innerHTML = google.outerHTML;
+
+    for (let i = 0; i < ul.length; i++) {
+      if (parseInt(ul[i].innerHTML.split(" ")[1]) % 2 == 0)
+        ul[i].style.color = "#FF0000";
+      else
+        ul[i].style.color = '#0000FF';
+    }
+
+    var css = document.createElement("link");
+    css.rel = 'stylesheet';
+    css.type = "text/css"
+    css.href = "css/style.css"
+
+    document.head.appendChild(css);
+
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button id="Zadaca 1.; Nedim" onclick="funkcija1()">Pokreni JS funkciju</button>
+
+  <script>
+    function funkcija1() {
+
+      var doc = document;
+      doc.title = "Nedim, Zadaca 1.";
+
+      function crEl(tagName) {
+
+        return doc.createElement(tagName);
+      }
+
+      var divContainer = crEl("div");
+      divContainer.setAttribute("id", "container");
+      doc.body.appendChild(divContainer);
+
+
+      for (let i = 0; i < 5; i++) {
+        var article = crEl("article");
+        divContainer.appendChild(article);
+      }
+
+      var articles = doc.querySelectorAll("article");
+
+      for (let i = 0; i < articles.length; i++) {
+        var h1 = crEl("h1");
+        var img = crEl("img");
+        var par = crEl("p");
+
+        articles[i].appendChild(h1);
+        articles[i].appendChild(img);
+        articles[i].appendChild(par);
+      }
+
+      var h1Tag = doc.querySelectorAll("h1");
+      var image = doc.querySelectorAll("img");
+      var paras = doc.querySelectorAll("p");
+      var suzuki = document.createElement("a");
+      suzuki.href = "https://hr.wikipedia.org/wiki/Suzuki";
+      suzuki.target = '_blank';
+      suzuki.innerHTML = "o Suzukiju";
+
+
+      for (let i = 0; i < articles.length; i++) {
+        h1Tag[i].innerHTML = "Ovo je " + (i + 1) + ". naslov";
+        image[i].setAttribute("src", "https://cdn.iconscout.com/icon/free/png-256/suzuki-282144.png");
+        paras[i].innerHTML = paras[i].innerHTML = "Procitaj vise: " + suzuki.outerHTML;
+
+
+      }
+
+    }
+  </script>
+
+
+</body>
+
+</html>

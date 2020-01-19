@@ -1,0 +1,20 @@
+a:link {
+    color: black;
+  }
+  
+a:visited {
+    color: rgb(168, 199, 57);
+  }
+  
+  a:hover {
+    color: rgb(70, 68, 216);
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+
+body {
+    background-color: dimgrey;
+}
